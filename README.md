@@ -1,6 +1,11 @@
 # hello-website-api
 
 
+### Mon Nov 30 15:50:15 MST 2015 - Get things running on heroku...
+
+- [x] `git push heroku`
+- [x] `heroku open`
+- [x] bugfix: use PORT environment variable heroku passes to us or we won't be able to start
 
 ### Mon Nov 30 15:32:11 MST 2015 - Setup node + heroku plumbing
 
