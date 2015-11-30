@@ -1,5 +1,126 @@
 # hello-website-api
 
+### Mon Nov 30 16:06:05 MST 2015 - Define create endpoints and test'em
+
+- [x] create beta signup route and callback
+- [x] create friend referral route and callback
+- [x] create sales demo route and callback
+
+- [x] test'em with `curl`
+
+```
+########################################################
+####### interact with create beta signup
+$ curl --verbose -XPOST http://localhost:5000/api/beta-signups
+*   Trying ::1...
+* Connected to localhost (::1) port 5000 (#0)
+> POST /api/beta-signups HTTP/1.1
+> Host: localhost:5000
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 501 Not Implemented
+< X-Powered-By: Express
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 15
+< ETag: W/"f-JXt8VLVJ68hSR+zkU49oHw"
+< Date: Mon, 30 Nov 2015 23:05:09 GMT
+< Connection: keep-alive
+<
+* Connection #0 to host localhost left intact
+Not Implemented
+
+
+########################################################
+####### interact with create friend referral
+$ curl --verbose -XPOST http://localhost:5000/api/friend-referrals
+*   Trying ::1...
+* Connected to localhost (::1) port 5000 (#0)
+> POST /api/friend-referrals HTTP/1.1
+> Host: localhost:5000
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 501 Not Implemented
+< X-Powered-By: Express
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 15
+< ETag: W/"f-JXt8VLVJ68hSR+zkU49oHw"
+< Date: Mon, 30 Nov 2015 23:05:22 GMT
+< Connection: keep-alive
+<
+* Connection #0 to host localhost left intact
+Not Implemented
+
+
+########################################################
+####### interact with create sales demo request
+$ curl --verbose -XPOST http://localhost:5000/api/sales-demo-requests
+*   Trying ::1...
+* Connected to localhost (::1) port 5000 (#0)
+> POST /api/sales-demo-requests HTTP/1.1
+> Host: localhost:5000
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 501 Not Implemented
+< X-Powered-By: Express
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 15
+< ETag: W/"f-JXt8VLVJ68hSR+zkU49oHw"
+< Date: Mon, 30 Nov 2015 23:05:33 GMT
+< Connection: keep-alive
+<
+* Connection #0 to host localhost left intact
+Not Implemented
+
+
+########################################################
+####### interact with stuff that doesn't exist:
+
+####### a resource we don't support
+$ curl --verbose -XPOST http://localhost:5000/api/some-other-things
+*   Trying ::1...
+* Connected to localhost (::1) port 5000 (#0)
+> POST /api/some-other-things HTTP/1.1
+> Host: localhost:5000
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 404 Not Found
+< X-Powered-By: Express
+< X-Content-Type-Options: nosniff
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 35
+< Date: Mon, 30 Nov 2015 23:05:43 GMT
+< Connection: keep-alive
+<
+Cannot POST /api/some-other-things
+* Connection #0 to host localhost left intact
+
+
+####### a method we don't support
+$ curl --verbose -XGET http://localhost:5000/api/sales-demo-requests
+*   Trying ::1...
+* Connected to localhost (::1) port 5000 (#0)
+> GET /api/sales-demo-requests HTTP/1.1
+> Host: localhost:5000
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+< HTTP/1.1 404 Not Found
+< X-Powered-By: Express
+< X-Content-Type-Options: nosniff
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 36
+< Date: Mon, 30 Nov 2015 23:09:43 GMT
+< Connection: keep-alive
+<
+Cannot GET /api/sales-demo-requests
+* Connection #0 to host localhost left intact
+
+```
+
 
 ### Mon Nov 30 15:50:15 MST 2015 - Get things running on heroku...
 
